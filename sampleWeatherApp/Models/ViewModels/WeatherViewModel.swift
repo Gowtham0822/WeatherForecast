@@ -20,6 +20,9 @@ class WeatherViewModel {
     }
     
     //MARK: - Weather details API
+    /**
+        Wether forecast API function and passing parameters of latitude and longtitude of location along with appid provided by api consle from openweathermap site .
+     */
     
     func getWeatherUsingLocation(latitude: Double, longtitude: Double, compeletion: @escaping AppUtils.WFCompletionHandler) {
         if AppUtils.inValidNetworkPreCondition(completionHandler: compeletion) {
@@ -66,7 +69,9 @@ class WeatherViewModel {
     }
     
     //MARK: - Grouping Weather Details
-    
+    /**
+        Once api success we will group the forecast details list by using dictionary grouping method by date and also seprate the hourly based result.
+     */
     func groupForecastByDate(array: [WeatherListDetails]) {
         
         let groupedMessages = Dictionary(grouping: array) { (element) -> String in

@@ -67,7 +67,10 @@ class WeatherViewController: UIViewController {
         }
     }
     
-    //MARK: - Location Weather API
+    /**
+          Fetch the weather deatils from api using location coordinate and response of api 3hours and 5days forecast
+     `groupedForecastList` array contains response list are grouped their associated dates using dictionary grouping and `hourlyForecastList` array contains today's hourly data.
+     */
     
     func getCurrentLocationWeather(latitude: Double, longtitude: Double) {
         self.view.makeToastActivity(.center)

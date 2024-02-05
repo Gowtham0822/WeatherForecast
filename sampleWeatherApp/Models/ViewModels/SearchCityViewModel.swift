@@ -14,7 +14,10 @@ class SearchCityViewModel {
     var searchRequest : DataRequest? = nil
     
     //MARK: - City Search API
-
+    /**
+        Wether geocoding API function and passing parameters of query of location name along with appid provided by api consle from openweathermap site .
+        limit used for array count which need to display
+     */
     func getCountryCoordinates(searchText: String, compeletion: @escaping AppUtils.WFCompletionHandler) {
         if AppUtils.inValidNetworkPreCondition(completionHandler: compeletion) {
             return
