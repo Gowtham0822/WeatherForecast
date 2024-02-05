@@ -17,6 +17,7 @@ class HourlyForecastCollectionViewCell: UICollectionViewCell {
         timeLabel.text = model.dt?.timeStringFromUnixTime()
         iconImageView.contentMode = .scaleAspectFit
         let urlString = model.weather?.last?.icon ?? ""
+        iconImageView.kf.indicatorType = .activity
         iconImageView.kf.setImage(with: urlString.getImageUrl())
         temperatureLabel.text = model.main?.temp?.getTemperatureString()
     }

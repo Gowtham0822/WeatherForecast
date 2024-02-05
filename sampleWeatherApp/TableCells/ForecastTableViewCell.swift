@@ -33,6 +33,7 @@ class ForecastTableViewCell: UITableViewCell {
         temperatureLabel.text = weatherListDetails?.main?.temp?.getTemperatureString()
         weatherIconImageView.contentMode = .scaleAspectFit
         let urlString = weatherListDetails?.weather?.last?.icon ?? ""
+        weatherIconImageView.kf.indicatorType = .activity
         weatherIconImageView.kf.setImage(with: urlString.getImageUrl())
     }
 
