@@ -42,6 +42,7 @@ public struct WFConstants {
     public static var settingsTitle = "Settings"
     public static var cancelTitle = "cancel"
     public static var goTitle = "Go"
+    public static var fetchWeather = "Fetching weather.."
     
     
     public struct ErrorMessage {

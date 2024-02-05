@@ -13,6 +13,7 @@ class WeatherViewModel {
     
     var cityDetails: CityDetails?
     var groupedForecastList = [WeatherListDetails]()
+    var hourlyForecastList = [WeatherListDetails]()
     
     init() {
         self.groupedForecastList.removeAll()
@@ -41,9 +42,10 @@ class WeatherViewModel {
                         let jsonDecoder = JSONDecoder()
                         if statusCode == 200 {
                             let currentAPPDetails = try jsonDecoder.decode(WeatherModel.self, from: json)
-                            let array = currentAPPDetails.list
-                            self.groupForecastByDate(array: array ?? [])
-                            self.cityDetails = currentAPPDetails.city
+                            if let array = currentAPPDetails.list, !array.isEmpty {
+                                self.groupForecastByDate(array: array)
+                                self.cityDetails = currentAPPDetails.city
+                            }
                             compeletion(true, WFConstants.SuccessMessage.weatherSuccess)
                         } else {
                             if let apiError = try? jsonDecoder.decode(ErrorModel.self, from: json), let message = apiError.message {
@@ -72,6 +74,8 @@ class WeatherViewModel {
         }
         let sortedKeys = groupedMessages.values.sorted(by: {$0.last?.dt ?? 0 < $1.last?.dt ?? 0})
         groupedForecastList.removeAll()
+        hourlyForecastList.removeAll()
+        hourlyForecastList = sortedKeys.first ?? []
         sortedKeys.forEach { details in
             if let weatherDetail = details.first {
                 groupedForecastList.append(weatherDetail)

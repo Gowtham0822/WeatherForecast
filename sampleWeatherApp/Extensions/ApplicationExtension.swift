@@ -10,6 +10,9 @@ import UIKit
 
 public extension UIApplication {
     func currentUIWindow() -> UIWindow? {
+        if #available(iOS 13, *) {
+            return UIApplication.shared.windows.first { $0.isKeyWindow }
+        }
         if #available(iOS 15.0, *) {
             let scenes = UIApplication.shared.connectedScenes.first as? UIWindowScene
             let window = scenes?.windows.last
@@ -19,6 +22,5 @@ public extension UIApplication {
                 return window
             }
         }
-        
     }
 }

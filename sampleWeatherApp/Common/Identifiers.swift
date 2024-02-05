@@ -14,6 +14,8 @@ enum Identifiers {
     static let forecastHeaderCell = "ForecastHeaderCell"
     static let forecastListCell = "forecastListCell"
     static let searchCityTableViewCell = "SearchCityTableViewCell"
+    static let hourlyForecastTableViewCell = "HourlyForecastTableViewCell"
+    static let hourlyForecastCollectionViewCell = "HourlyForecastCollectionViewCell"
     
     //MARK: - Controller Identifiers
 

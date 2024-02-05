@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-UI-Display-Light.otf">
+            <string>SFUIDisplay-Light</string>
+        </array>
+        <array key="SF-UI-Display-Medium.otf">
+            <string>SFUIDisplay-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HourlyForecastCollectionViewCell" id="jY3-1b-tgx" customClass="HourlyForecastCollectionViewCell" customModule="sampleWeatherApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="98" height="90"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="NXr-QX-St0">
+                <rect key="frame" x="0.0" y="0.0" width="98" height="90"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="KiR-To-eeN">
+                        <rect key="frame" x="0.0" y="0.0" width="98" height="90"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CDa-fe-G86">
+                                <rect key="frame" x="0.0" y="0.0" width="98" height="19.333333333333332"/>
+                                <fontDescription key="fontDescription" name="SFUIDisplay-Medium" family="SF UI Display" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="aqi.high" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="t9d-Th-zeG">
+                                <rect key="frame" x="0.0" y="18.333333333333332" width="100" height="48.333333333333329"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="fd3-fA-7BG"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mrH-TV-fPh">
+                                <rect key="frame" x="0.0" y="64.333333333333329" width="98" height="25.666666666666671"/>
+                                <fontDescription key="fontDescription" name="SFUIDisplay-Light" family="SF UI Display" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="KiR-To-eeN" secondAttribute="trailing" id="BYx-ia-cU3"/>
+                    <constraint firstItem="KiR-To-eeN" firstAttribute="top" secondItem="NXr-QX-St0" secondAttribute="top" id="FCQ-ru-EJJ"/>
+                    <constraint firstAttribute="bottom" secondItem="KiR-To-eeN" secondAttribute="bottom" id="LNT-wP-Xkc"/>
+                    <constraint firstItem="KiR-To-eeN" firstAttribute="leading" secondItem="NXr-QX-St0" secondAttribute="leading" id="fNM-TA-ZWe"/>
+                </constraints>
+            </collectionViewCellContentView>
+            <size key="customSize" width="98" height="90"/>
+            <connections>
+                <outlet property="iconImageView" destination="t9d-Th-zeG" id="xB9-a5-jsk"/>
+                <outlet property="temperatureLabel" destination="mrH-TV-fPh" id="u3W-Wi-fu9"/>
+                <outlet property="timeLabel" destination="CDa-fe-G86" id="oYH-SV-Af3"/>
+            </connections>
+            <point key="canvasLocation" x="62.595419847328245" y="33.802816901408455"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="aqi.high" catalog="system" width="128" height="119"/>
+    </resources>
+</document>

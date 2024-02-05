@@ -24,4 +24,12 @@ extension Double {
         return measurementFormatter.string(from: temperature)
     }
     
+    func timeStringFromUnixTime() -> String {
+        let date = Date(timeIntervalSince1970: self)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "hh:mm a"
+        dateFormatter.timeZone = .current
+        return dateFormatter.string(from: date)
+    }
+    
 }
