@@ -7,7 +7,7 @@ Its supports to search your city and get a actual weather of your searched city.
 
 # Provider
 
-Weather forecast app used OpenWeatherMap API for providing weather details.
+Weather forecast app used [OpenWeatherMap API](https://openweathermap.org/api) for providing weather details.
 
 # How to Build
 
@@ -27,3 +27,5 @@ Weather forecast app used OpenWeatherMap API for providing weather details.
 #Requirements
 
  - iOS 13.0
+ - Swift 5
+ - Xcode 15.0
