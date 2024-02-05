@@ -8,4 +8,5 @@ target 'sampleWeatherApp' do
   # Pods for sampleWeatherApp
   pod 'Alamofire'
   pod 'Kingfisher'
+  pod 'IQKeyboardManagerSwift'
 end
